@@ -190,23 +190,23 @@ font-size:24px;
 
 <div class="card leader-card">
     <div class="title">🏆 Лидер месяца</div>
-    <div class="value">Морозов Самсон</div>
+    <div class="value" id="leaderName">Морозов Самсон</div>
     <div style="margin-top:10px;color:#fbbf24;font-size:22px;">
-        1100 баллов
+        <div id="leaderPoints">1100 баллов</div>
     </div>
 </div>
 
 <div class="card">
     <div class="title">🏙️ Город месяца</div>
-    <div class="value">Москва</div>
+    <div class="value" id="cityName">Москва</div>
     <div style="margin-top:10px;color:#60a5fa;font-size:22px;">
-        1700 баллов
+       <div id="cityPoints">1700 баллов</div>
     </div>
 </div>
 
  <div class="card">
     <div class="title">📅 Период</div>
-    <div class="value">Май 2026</div>
+    <div class="value" id="periodText">Май 2026</div>
     <div style="margin-top:10px;color:#9ca3af;font-size:18px;">
         Обновлено сегодня
     </div>
@@ -217,7 +217,7 @@ font-size:24px;
 
 <h2>🏆 Рейтинг агентов</h2>
 
-<table>
+<table id="leaderboardTable">
 
 <tr>
 <th>Место</th>
@@ -250,5 +250,16 @@ font-size:24px;
 </table>
 
 </div>
+    <script>
+
+const DASHBOARD_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=377927329&single=true";
+
+const LEADERBOARD_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=2065202101&single=true";
+
+console.log("KosmoBoard loaded");
+
+</script>
 </body>
 </html>
