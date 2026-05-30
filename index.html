@@ -63,6 +63,7 @@ drop-shadow(0 0 20px gold);
 transform:scale(1);
 filter:drop-shadow(0 0 5px gold);
 }
+    
 }
     @keyframes goldFlow {
 
@@ -72,6 +73,21 @@ background-position:0% 50%;
 
 100%{
 background-position:100% 50%;
+}
+        
+}
+    @keyframes leaderPulse {
+
+0%{
+box-shadow:0 0 10px rgba(255,191,36,0.2);
+}
+
+50%{
+box-shadow:0 0 35px rgba(255,191,36,0.7);
+}
+
+100%{
+box-shadow:0 0 10px rgba(255,191,36,0.2);
 }
 
 }
@@ -91,6 +107,10 @@ cursor:pointer;
     width:280px;
     text-align:center;
     
+}
+    .leader-card{
+animation:leaderPulse 3s ease-in-out infinite;
+border:2px solid rgba(255,191,36,0.4);
 }
     .card:hover{
 transform:translateY(-8px);
@@ -168,7 +188,7 @@ font-size:24px;
 
 <div class="cards">
 
-<div class="card">
+<div class="card leader-card">
     <div class="title">🏆 Лидер месяца</div>
     <div class="value">Морозов Самсон</div>
     <div style="margin-top:10px;color:#fbbf24;font-size:22px;">
