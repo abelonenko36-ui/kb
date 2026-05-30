@@ -258,6 +258,11 @@ const DASHBOARD_URL =
 const LEADERBOARD_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=2065202101&single=true";
 
+        fetch(DASHBOARD_URL)
+  .then(response => response.text())
+  .then(data => {
+      console.log("Dashboard loaded");
+  });
 console.log("KosmoBoard loaded");
 
 </script>
