@@ -275,7 +275,9 @@ lines.forEach(line => {
 
   data[key] = value;
 });
+
 console.log(data);
+console.log(Object.keys(data));
     
 const leaderName = data["Лидер месяца"] || "";
 const leaderCity = data["Город лидера"] || "";
@@ -286,8 +288,8 @@ const cityPoints = data["Баллы города"] || "";
 
 const period = data["Период"] || "";
 
-    document.getElementById("leaderName").innerText =
-  leaderName + "\n" + leaderCity;
+    document.getElementById("leaderName").innerHTML =
+  leaderName + "<br>" + leaderCity;
     document.getElementById("leaderPoints").innerText =
         leaderPoints + " баллов";
 
