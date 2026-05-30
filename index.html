@@ -27,7 +27,27 @@ margin-bottom:40px;
 animation: glow 3s ease-in-out infinite;
 }
 @keyframes glow {
+@keyframes medalGlow {
 
+0%{
+transform:scale(1);
+filter:drop-shadow(0 0 5px gold);
+}
+
+50%{
+transform:scale(1.25);
+filter:
+drop-shadow(0 0 10px gold)
+drop-shadow(0 0 20px gold);
+}
+
+100%{
+transform:scale(1);
+filter:drop-shadow(0 0 5px gold);
+}
+
+}
+    
 0%{
 text-shadow:0 0 10px rgba(255,191,36,0.3);
 }
@@ -157,21 +177,21 @@ font-size:24px;
 </tr>
 
 <tr class="gold">
-<td>🥇</td>
+<td style="animation: medalGlow 2s infinite;">🥇</td>
 <td>Морозов Самсон</td>
 <td>Мск</td>
 <td>1100</td>
 </tr>
 
 <tr class="silver">
-<td>🥈</td>
+<td style="animation: medalGlow 2s infinite 0.5s;">🥈</td>
 <td>Долматов Павел</td>
 <td>Мск</td>
 <td>600</td>
 </tr>
 
 <tr class="bronze">
-<td>🥉</td>
+<td style="animation: medalGlow 2s infinite 1s;">🥉</td>
 <td>Мамчук Виктория</td>
 <td>Мск</td>
 <td>400</td>
