@@ -292,7 +292,7 @@ async function loadLeaderboard() {
 
     const response = await fetch(LEADERBOARD_URL);
     const text = await response.text();
-
+console.log(text);
     const rows = text.trim().split("\n");
 
     rows.shift();
