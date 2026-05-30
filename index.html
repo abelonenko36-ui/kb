@@ -226,26 +226,8 @@ font-size:24px;
 <th>Баллы</th>
 </tr>
 
-<tr class="gold">
-<td style="animation: medalGlow 2s infinite;">🥇</td>
-<td>Морозов Самсон</td>
-<td>Мск</td>
-<td>1100</td>
-</tr>
-
-<tr class="silver">
-<td style="animation: medalGlow 2s infinite 0.5s;">🥈</td>
-<td>Долматов Павел</td>
-<td>Мск</td>
-<td>600</td>
-</tr>
-
-<tr class="bronze">
-<td style="animation: medalGlow 2s infinite 1s;">🥉</td>
-<td>Мамчук Виктория</td>
-<td>Мск</td>
-<td>400</td>
-</tr>
+<tbody id="leaderboardBody">
+</tbody>
 
 </table>
 
@@ -256,7 +238,7 @@ const DASHBOARD_URL =
 "https://docs.google.com/spreadsheets/d/1QL4_wG2fRgI1R4gU5cPswHT_yfT0rHuGsF25axDrmJg/export?format=csv&gid=377927329";
         
 const LEADERBOARD_URL =
-"https://docs.google.com/spreadsheets/d/1QL4_wG2fRgI1R4gU5cPswHT_yfT0rHuGsF25axDrmJg/gviz/tq?tqx=out:csv&sheet=LEADERBOARD";
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pub?gid=2065202101&single=true&output=csv";
         
 async function loadDashboard() {
 
@@ -302,8 +284,64 @@ const period = data["Период"] || "";
     document.getElementById("periodText").innerText = period;
 }
 
-loadDashboard();
 
+async function loadLeaderboard() {
+
+    const response = await fetch(LEADERBOARD_URL);
+    const text = await response.text();
+
+    const rows = text.trim().split("\n");
+
+    rows.shift();
+
+    const tbody =
+        document.getElementById("leaderboardBody");
+
+    tbody.innerHTML = "";
+
+    rows.forEach((row, index) => {
+
+        const cols = row.split(",");
+
+        const agent =
+            cols[1]?.replace(/"/g, "") || "";
+
+        const city =
+            cols[2]?.replace(/"/g, "") || "";
+
+        const points =
+            cols[6]?.replace(/"/g, "") || "";
+
+        if (!agent) return;
+
+        let medal = "";
+
+        if (index === 0) medal = "🥇";
+        else if (index === 1) medal = "🥈";
+        else if (index === 2) medal = "🥉";
+        else medal = index + 1;
+
+        const tr = document.createElement("tr");
+
+        if (index === 0)
+            tr.classList.add("gold");
+        else if (index === 1)
+            tr.classList.add("silver");
+        else if (index === 2)
+            tr.classList.add("bronze");
+
+        tr.innerHTML = `
+            <td>${medal}</td>
+            <td>${agent}</td>
+            <td>${city}</td>
+            <td>${points}</td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+}
+loadDashboard();
+loadLeaderboard();
 </script>
 </body>
 </html>
