@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<title>Космо-Лидерная доска</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KosmoBoard</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#111827;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+.header{
+    text-align:center;
+    padding:30px;
+}
+
+.logo{
+    font-size:48px;
+    font-weight:bold;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    margin:30px;
+}
+
+.card{
+    background:#1f2937;
+    padding:25px;
+    border-radius:20px;
+    width:280px;
+    text-align:center;
+}
+
+.title{
+    color:#9ca3af;
+    font-size:18px;
+}
+
+.value{
+    font-size:34px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>🏆 Космо-Лидерная доска</h1>
+<div class="header">
+    <div class="logo">🏆 KOSMOBOARD</div>
+</div>
 
-<h2>Первый сайт Настюши и Хафуля 😈</h2>
+<div class="cards">
+
+    <div class="card">
+        <div class="title">Лидер месяца</div>
+        <div class="value">Морозов Самсон</div>
+    </div>
+
+    <div class="card">
+        <div class="title">Город месяца</div>
+        <div class="value">Москва</div>
+    </div>
+
+    <div class="card">
+        <div class="title">Период</div>
+        <div class="value">Май 2026</div>
+    </div>
+
+</div>
 
 </body>
 </html>
