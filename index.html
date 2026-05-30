@@ -258,12 +258,34 @@ const DASHBOARD_URL =
 const LEADERBOARD_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=2065202101&single=true";
 
-        fetch(DASHBOARD_URL)
-  .then(response => response.text())
-  .then(data => {
-      console.log("Dashboard loaded");
-  });
-console.log("KosmoBoard loaded");
+async function loadDashboard() {
+
+    const response = await fetch(DASHBOARD_URL);
+    const html = await response.text();
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    const rows = doc.querySelectorAll("tr");
+
+    const leaderName = rows[0]?.children[1]?.innerText || "";
+    const leaderPoints = rows[2]?.children[1]?.innerText || "";
+    const cityName = rows[3]?.children[1]?.innerText || "";
+    const cityPoints = rows[4]?.children[1]?.innerText || "";
+    const period = rows[5]?.children[1]?.innerText || "";
+
+    document.getElementById("leaderName").innerText = leaderName;
+    document.getElementById("leaderPoints").innerText =
+        leaderPoints + " баллов";
+
+    document.getElementById("cityName").innerText = cityName;
+    document.getElementById("cityPoints").innerText =
+        cityPoints + " баллов";
+
+    document.getElementById("periodText").innerText = period;
+}
+
+loadDashboard();
 
 </script>
 </body>
