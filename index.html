@@ -220,10 +220,13 @@ font-size:24px;
 <table id="leaderboardTable">
 
 <tr>
-<th>Место</th>
-<th>Агент</th>
-<th>Город</th>
-<th>Баллы</th>
+    <th>Место</th>
+    <th>Агент</th>
+    <th>Город</th>
+    <th>Встречи</th>
+    <th>Брони</th>
+    <th>Сделки</th>
+    <th>Баллы</th>
 </tr>
 
 <tbody id="leaderboardBody">
@@ -301,16 +304,23 @@ async function loadLeaderboard() {
     rows.forEach((row, index) => {
 
         const cols = row.split(",");
+const agent =
+    cols[1]?.replace(/"/g, "") || "";
 
-        const agent =
-            cols[1]?.replace(/"/g, "") || "";
+const city =
+    cols[2]?.replace(/"/g, "") || "";
 
-        const city =
-            cols[2]?.replace(/"/g, "") || "";
+const meetings =
+    cols[3]?.replace(/"/g, "") || "";
 
-        const points =
-            cols[6]?.replace(/"/g, "") || "";
+const bookings =
+    cols[4]?.replace(/"/g, "") || "";
 
+const deals =
+    cols[5]?.replace(/"/g, "") || "";
+
+const points =
+    cols[6]?.replace(/"/g, "") || "";
         if (!agent) return;
 
         let medal = "";
@@ -330,11 +340,14 @@ async function loadLeaderboard() {
             tr.classList.add("bronze");
 
         tr.innerHTML = `
-            <td>${medal}</td>
-            <td>${agent}</td>
-            <td>${city}</td>
-            <td>${points}</td>
-        `;
+<td>${medal}</td>
+<td>${agent}</td>
+<td>${city}</td>
+<td>${meetings}</td>
+<td>${bookings}</td>
+<td>${deals}</td>
+<td>${points}</td>
+`;
 
         tbody.appendChild(tr);
     });
