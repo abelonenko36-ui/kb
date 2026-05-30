@@ -26,7 +26,24 @@ font-weight:bold;
 margin-bottom:40px;
 animation: glow 3s ease-in-out infinite;
 }
-@keyframes glow {
+@keyframes glow
+    {
+    
+0%{
+text-shadow:0 0 10px rgba(255,191,36,0.3);
+}
+
+50%{
+text-shadow:
+0 0 20px rgba(255,191,36,0.8),
+0 0 40px rgba(255,191,36,0.5);
+}
+
+100%{
+text-shadow:0 0 10px rgba(255,191,36,0.3);
+}
+
+}
 @keyframes medalGlow {
 
 0%{
@@ -46,23 +63,6 @@ transform:scale(1);
 filter:drop-shadow(0 0 5px gold);
 }
 
-}
-    
-0%{
-text-shadow:0 0 10px rgba(255,191,36,0.3);
-}
-
-50%{
-text-shadow:
-0 0 20px rgba(255,191,36,0.8),
-0 0 40px rgba(255,191,36,0.5);
-}
-
-100%{
-text-shadow:0 0 10px rgba(255,191,36,0.3);
-}
-
-}
 .cards{
     display:flex;
     gap:20px;
