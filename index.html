@@ -263,16 +263,22 @@ async function loadDashboard() {
     const response = await fetch(DASHBOARD_URL);
     const html = await response.text();
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
-console.log(html);
-    const rows = doc.querySelectorAll("tr");
+  const lines = html.trim().split("\n");
 
-    const leaderName = rows[0]?.children[1]?.innerText || "";
-    const leaderPoints = rows[2]?.children[1]?.innerText || "";
-    const cityName = rows[3]?.children[1]?.innerText || "";
-    const cityPoints = rows[4]?.children[1]?.innerText || "";
-    const period = rows[5]?.children[1]?.innerText || "";
+const leaderName =
+  lines[0].split(",")[1]?.replace(/"/g, "") || "";
+
+const leaderPoints =
+  lines[1].split(",")[1]?.replace(/"/g, "") || "";
+
+const cityName =
+  lines[2].split(",")[1]?.replace(/"/g, "") || "";
+
+const cityPoints =
+  lines[3].split(",")[1]?.replace(/"/g, "") || "";
+
+const period =
+  lines[4].split(",")[1]?.replace(/"/g, "") || "";
 
     document.getElementById("leaderName").innerText = leaderName;
     document.getElementById("leaderPoints").innerText =
