@@ -253,11 +253,11 @@ font-size:24px;
     <script>
 
 const DASHBOARD_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=377927329&single=true";
-
+"https://docs.google.com/spreadsheets/d/1QL4_wG2fRgI1R4gU5cPswHT_yfT0rHuGsF25axDrmJg/gviz/tq?tqx=out:csv&sheet=DASHBOARD";
+        
 const LEADERBOARD_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vTbI68ssmGchGt4Fu0JtzwnK6D0lTZ1qnxmewAWcXwrhRJhTrRmymg4XltFNjGbBlp3tx4f5hPfZzUu/pubhtml?gid=2065202101&single=true";
-
+"https://docs.google.com/spreadsheets/d/1QL4_wG2fRgI1R4gU5cPswHT_yfT0rHuGsF25axDrmJg/gviz/tq?tqx=out:csv&sheet=LEADERBOARD";
+        
 async function loadDashboard() {
 
     const response = await fetch(DASHBOARD_URL);
@@ -265,7 +265,7 @@ async function loadDashboard() {
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
-
+console.log(html);
     const rows = doc.querySelectorAll("tr");
 
     const leaderName = rows[0]?.children[1]?.innerText || "";
