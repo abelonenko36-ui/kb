@@ -26,6 +26,7 @@ font-weight:bold;
 margin-bottom:40px;
 animation: glow 3s ease-in-out infinite;
 }
+    
 @keyframes glow
     {
     
@@ -62,6 +63,17 @@ drop-shadow(0 0 20px gold);
 transform:scale(1);
 filter:drop-shadow(0 0 5px gold);
 }
+}
+    @keyframes goldFlow {
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
 }
 .cards{
     display:flex;
@@ -115,6 +127,16 @@ td{
 }
 .gold{
 font-size:28px;
+
+background:linear-gradient(
+90deg,
+#9c7700,
+#ffd700,
+#9c7700
+);
+
+background-size:300% 100%;
+animation:goldFlow 4s linear infinite;
 }
 
 .silver{
