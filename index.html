@@ -45,18 +45,15 @@ text-shadow:0 0 10px rgba(255,191,36,0.3);
 }
 
 }
-    @keyframes cityGlow {
-  0% {
-    box-shadow: 0 0 10px #60a5fa;
-  }
+   @keyframes cityGlow
+    {
+    0%,100%{
+        box-shadow:0 0 15px rgba(96,165,250,.5);
+    }
 
-  50% {
-    box-shadow: 0 0 35px #60a5fa;
-  }
-
-  100% {
-    box-shadow: 0 0 10px #60a5fa;
-  }
+    50%{
+        box-shadow:0 0 35px rgba(96,165,250,.9);
+    }
 }
 @keyframes medalGlow {
 
@@ -125,17 +122,16 @@ cursor:pointer;
 animation:leaderPulse 3s ease-in-out infinite;
 border:2px solid rgba(255,191,36,0.4);
 }
- .city-card {
-    border: 2px solid #60a5fa;
+ .city-card{
     animation: cityGlow 2s infinite;
 }
-    .period-banner {
-    text-align: center;
-    font-size: 38px;
-    font-weight: bold;
-    color: #d1d5db;
-    margin: 20px 0 35px 0;
-    letter-spacing: 2px;
+ .period-banner{
+    text-align:center;
+    font-size:22px;
+    font-weight:600;
+    color:#9ca3af;
+    margin-top:40px;
+    letter-spacing:1px;
 }
     .card:hover{
 transform:translateY(-8px);
@@ -234,7 +230,7 @@ font-size:24px;
 </div>
 
 <div class="period-banner">
-    <span id="periodText">Май 2026</span>
+    📅 Май 2026
 </div>
 
 </div>
