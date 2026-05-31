@@ -160,15 +160,26 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
     
 .watermark{
     position:fixed;
+
     left:50%;
-    top:50%;
+    top:62%;
+
     transform:translate(-50%,-50%);
-    width:600px;
-    height:200px;
 
-    background:red;
+    width:650px;
+    height:160px;
 
-    opacity:0.5;
+    background-image:url("logo kosmodom.png");
+    background-repeat:no-repeat;
+    background-position:center;
+
+    background-size:100% auto;
+
+    opacity:0.04;
+
+    pointer-events:none;
+
+    z-index:0;
 }
 table{
     width:100%;
