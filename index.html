@@ -181,6 +181,10 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
     pointer-events:none;
     z-index:0;
 }
+    .leader-title{
+    text-align:center;
+    margin:20px 0;
+}
     
 table{
     width:100%;
@@ -195,8 +199,12 @@ table{
 }
 
 th{
-    background:rgba(55,65,81,0.55);
-}
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:rgba(55,65,81,0.95);
+
     padding:15px;
 }
 
@@ -271,10 +279,9 @@ font-size:24px;
 </div>
 
 </div>
+    <h2 class="leader-title">🏆 Рейтинг агентов</h2>
     <div class="watermark"></div>
 <div class="leaderboard">
-
-<h2>🏆 Рейтинг агентов</h2>
 
 <table id="leaderboardTable">
 
