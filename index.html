@@ -424,8 +424,12 @@ const points =
 loadDashboard();
 loadLeaderboard();
       
-       let direction = 1;
-let pause = false;
+let direction = 1;
+let pause = true;
+
+        setTimeout(() => {
+    pause = false;
+}, 10000);
 
 setInterval(() => {
 
@@ -446,7 +450,7 @@ setInterval(() => {
 
     setTimeout(() => {
         pause = false;
-    }, 5000);
+    }, 3000);
 
 }
 
@@ -457,7 +461,7 @@ if (board.scrollTop <= 0 && direction === -1) {
 
     setTimeout(() => {
         pause = false;
-    }, 60000);
+    }, 30000);
 
 }
 
