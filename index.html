@@ -103,9 +103,10 @@ box-shadow:0 0 10px rgba(255,191,36,0.2);
 }
 .cards{
     display:flex;
-    gap:20px;
     justify-content:center;
-    margin:10px 30px 20px 30px;
+    align-items:center;
+    gap:40px;
+    margin:20px auto 40px;
 }
 
 .card{
@@ -125,13 +126,17 @@ border:2px solid rgba(255,191,36,0.4);
  .city-card{
     animation: cityGlow 2s infinite;
 }
- .period-banner{
-    text-align:center;
-    font-size:22px;
-    font-weight:600;
-    color:#9ca3af;
-    margin-top:40px;
-    letter-spacing:1px;
+.period-banner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+    font-weight:700;
+
+    color:#d1d5db;
+
+    min-width:180px;
 }
     .card:hover{
 transform:translateY(-8px);
