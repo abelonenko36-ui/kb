@@ -110,22 +110,25 @@ box-shadow:0 0 10px rgba(255,191,36,0.2);
 }
 
 .card{
-    transition: 0.3s;
-cursor:pointer;
+    width:300px;
+    height:220px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
     background:#1f2937;
-    padding:25px;
     border-radius:20px;
-    width:280px;
     text-align:center;
+}
+   .leader-card{
+    animation:leaderPulse 3s ease-in-out infinite;
+}
+
+.city-card{
+    animation:cityGlow 2s infinite;
+}
     
-}
-    .leader-card{
-animation:leaderPulse 3s ease-in-out infinite;
-border:2px solid rgba(255,191,36,0.4);
-}
- .city-card{
-    animation: cityGlow 2s infinite;
-}
 .period-banner{
     display:flex;
     align-items:center;
@@ -145,14 +148,15 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
 }
     
 .leaderboard{
-    width:80%;
+    width:90%;
     height:650px;
+
     margin:20px auto;
 
     overflow:hidden;
     position:relative;
 }
-}
+    
 table{
     width:100%;
     border-collapse:collapse;
@@ -222,16 +226,16 @@ font-size:24px;
     </div>
 </div>
 
-<div class="card city-card">
+<div class="period-banner">
+    📅 Май 2026
+</div>
+
+    <div class="card city-card">
     <div class="title">🏙️ Город месяца</div>
     <div class="value" id="cityName">Москва</div>
     <div style="margin-top:10px;color:#60a5fa;font-size:22px;">
        <div id="cityPoints">1700 баллов</div>
     </div>
-</div>
-
-<div class="period-banner">
-    📅 Май 2026
 </div>
 
 </div>
