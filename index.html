@@ -426,7 +426,7 @@ loadLeaderboard();
 let direction = 1;
 let pause = true;
 
-        setTimeout(() => {
+setTimeout(() => {
     pause = false;
 }, 15000);
 
@@ -438,31 +438,32 @@ setInterval(() => {
 
     board.scrollTop += direction;
 
-  if (
-    board.scrollTop + board.clientHeight >=
-    board.scrollHeight - 5 &&
-    direction === 1
-)
+    if (
+        board.scrollTop + board.clientHeight >=
+        board.scrollHeight - 5 &&
+        direction === 1
+    ) {
 
-    direction = -1;
-    pause = true;
+        direction = -1;
+        pause = true;
 
-    setTimeout(() => {
-        pause = false;
-    }, 5000);
+        setTimeout(() => {
+            pause = false;
+        }, 5000);
+    }
 
-}
+    if (
+        board.scrollTop <= 0 &&
+        direction === -1
+    ) {
 
-if (board.scrollTop <= 0 && direction === -1) {
+        direction = 1;
+        pause = true;
 
-    direction = 1;
-    pause = true;
-
-    setTimeout(() => {
-        pause = false;
-    }, 15000);
-
-}
+        setTimeout(() => {
+            pause = false;
+        }, 15000);
+    }
 
 }, 40);
 </script>
