@@ -158,6 +158,23 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
     position:relative;
 }
     
+.watermark{
+    position:fixed;
+    left:50%;
+    top:70%;
+    transform:translate(-50%,-50%);
+
+    width:1200px;
+    height:350px;
+
+    background:url("логотип kosmodom.png") center center no-repeat;
+    background-size:contain;
+
+    opacity:0.05;
+
+    pointer-events:none;
+    z-index:0;
+}    
 table{
     width:100%;
     border-collapse:collapse;
@@ -213,7 +230,9 @@ font-size:24px;
 </style>
 </head>
 
-<body>
+<body
+    
+<div class="watermark"></div>
 
 <div class="header">
     <div class="logo">🏆 KOSMOBOARD</div>
