@@ -415,9 +415,12 @@ const points =
 loadDashboard();
 loadLeaderboard();
       
-        let direction = 1;
+       let direction = 1;
+let pause = false;
 
 setInterval(() => {
+
+    if (pause) return;
 
     const board = document.querySelector(".leaderboard");
 
@@ -427,12 +430,26 @@ setInterval(() => {
         board.scrollTop + board.clientHeight >=
         board.scrollHeight
     ) {
+
         direction = -1;
+        pause = true;
+
+        setTimeout(() => {
+            pause = false;
+        }, 10000);
+
     }
 
-    if (board.scrollTop <= 0) {
-        direction = 1;
-    }
+   if (board.scrollTop <= 0) {
+
+    direction = 1;
+    pause = true;
+
+    setTimeout(() => {
+        pause = false;
+    }, 5000);
+
+}
 
 }, 40);
 </script>
