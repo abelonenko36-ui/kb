@@ -137,6 +137,7 @@ border:2px solid rgba(255,191,36,0.4);
     color:#d1d5db;
 
     min-width:180px;
+    opacity:0.85;
 }
     .card:hover{
 transform:translateY(-8px);
@@ -145,18 +146,13 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
     
 .leaderboard{
     width:80%;
-    margin:40px auto;
-}
-    .leaderboard {
-    height: 650px;
-    overflow-y: auto;
-}
+    height:650px;
+    margin:20px auto;
 
-.leaderboard h2{
-    text-align:center;
-    margin-bottom:20px;
+    overflow:hidden;
+    position:relative;
 }
-
+}
 table{
     width:100%;
     border-collapse:collapse;
@@ -381,30 +377,27 @@ const points =
 }
 loadDashboard();
 loadLeaderboard();
-        setInterval(() => {
+      
+        let direction = 1;
 
-  window.scrollBy({
-    top: 1,
-    behavior: "smooth"
-  });
+setInterval(() => {
 
-  if (
-    window.innerHeight + window.scrollY >=
-    document.body.scrollHeight - 5
-  ) {
+    const board = document.querySelector(".leaderboard");
 
-    setTimeout(() => {
+    board.scrollTop += direction;
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+    if (
+        board.scrollTop + board.clientHeight >=
+        board.scrollHeight
+    ) {
+        direction = -1;
+    }
 
-    }, 3000);
+    if (board.scrollTop <= 0) {
+        direction = 1;
+    }
 
-  }
-
-}, 50);
+}, 40);
 </script>
 </body>
 </html>
