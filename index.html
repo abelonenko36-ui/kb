@@ -150,7 +150,7 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
     
 .leaderboard{
     width:90%;
-    height:800px;
+    height:560px;
 
 margin-top:-25px;
 margin:-5px auto 20px auto;
@@ -208,11 +208,11 @@ th{
 
     box-shadow:0 4px 15px rgba(0,0,0,0.4);
 
-    padding:15px;
+    padding:8px;
 }
 
 td{
-    padding:15px;
+    padding:8px;
     text-align:center;
     border-top:1px solid rgba(255,255,255,0.08);
 
@@ -440,11 +440,11 @@ setInterval(() => {
 
     board.scrollTop += direction;
 
-   if (
+  if (
     board.scrollTop + board.clientHeight >=
-    board.scrollHeight &&
+    board.scrollHeight - 5 &&
     direction === 1
-) {
+)
 
     direction = -1;
     pause = true;
