@@ -435,22 +435,22 @@ setInterval(() => {
 
     board.scrollTop += direction;
 
-    if (
+   if (
     board.scrollTop + board.clientHeight >=
     board.scrollHeight &&
     direction === 1
-)
+) {
 
-        direction = -1;
-        pause = true;
+    direction = -1;
+    pause = true;
 
-        setTimeout(() => {
-            pause = false;
-        }, 15000);
+    setTimeout(() => {
+        pause = false;
+    }, 15000);
 
-    }
+}
 
-   if (board.scrollTop <= 0 && direction === -1) {
+if (board.scrollTop <= 0 && direction === -1) {
 
     direction = 1;
     pause = true;
@@ -458,6 +458,7 @@ setInterval(() => {
     setTimeout(() => {
         pause = false;
     }, 5000);
+
 }
 
 }, 40);
