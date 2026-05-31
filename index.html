@@ -184,14 +184,17 @@ box-shadow:0 0 25px rgba(255,191,36,0.4);
 table{
     width:100%;
     border-collapse:collapse;
+
+    background:rgba(31,41,55,0.25);
+
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+
     border-radius:20px;
-    background:rgba(31,41,55,0.75);
-backdrop-filter:blur(8px);
-    overflow:hidden;
 }
 
 th{
-    background:rgba(55,65,81,0.9);
+    background:rgba(55,65,81,0.55);
 }
     padding:15px;
 }
@@ -199,7 +202,9 @@ th{
 td{
     padding:15px;
     text-align:center;
-    border-top:1px solid #374151;
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    background:transparent;
 }
 .gold{
 font-size:28px;
